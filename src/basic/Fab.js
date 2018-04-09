@@ -228,7 +228,7 @@ class Fab extends Component {
   componentDidMount() {
     let childrenArray = React.Children.toArray(this.props.children);
     let icon = _.remove(childrenArray, item => {
-      if (item.type.displayName === "Styled(Button)") {
+      if (item.type === Button) {
         return true;
       }
     });
@@ -251,7 +251,7 @@ class Fab extends Component {
   renderFab() {
     let childrenArray = React.Children.toArray(this.props.children);
     let icon = _.remove(childrenArray, item => {
-      if (item.type.displayName === "Styled(Button)") {
+      if (item.type === Button) {
         return true;
       }
     });

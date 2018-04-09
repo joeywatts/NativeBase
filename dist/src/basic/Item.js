@@ -34,7 +34,7 @@ nextProps){var _this2=this;
 var childrenArray=_react2.default.Children.toArray(nextProps.children);
 var inputProps={};
 _lodash2.default.remove(childrenArray,function(item){
-if(item.type.displayName==="Styled(Input)"){
+if(item.type===_Input.Input){
 inputProps=item.props;
 _this2.inputProps=item.props;
 return item;
@@ -278,8 +278,8 @@ error=new Error(
 component+" should have both Label and Input components");
 
 }else if(
-props.children[0].type.displayName!=="Styled(Label)"||
-props.children[1].type.displayName!=="Styled(Input)")
+props.children[0].type!==_Label.Label||
+props.children[1].type!==_Input.Input)
 {
 error=new Error(
 component+" should have Label and Input components only");

@@ -228,7 +228,7 @@ return(0,_computeProps2.default)(inp,defaultProps);
 {var _this2=this;
 var childrenArray=_react2.default.Children.toArray(this.props.children);
 var icon=_lodash2.default.remove(childrenArray,function(item){
-if(item.type.displayName==="Styled(Button)"){
+if(item.type===_Button.Button){
 return true;
 }
 });
@@ -251,7 +251,7 @@ clearTimeout(this.activeTimer);
 {
 var childrenArray=_react2.default.Children.toArray(this.props.children);
 var icon=_lodash2.default.remove(childrenArray,function(item){
-if(item.type.displayName==="Styled(Button)"){
+if(item.type===_Button.Button){
 return true;
 }
 });

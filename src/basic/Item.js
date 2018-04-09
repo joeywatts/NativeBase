@@ -34,7 +34,7 @@ class Item extends Component {
     const childrenArray = React.Children.toArray(nextProps.children);
     let inputProps = {};
     _.remove(childrenArray, item => {
-      if (item.type.displayName === "Styled(Input)") {
+      if (item.type === Input) {
         inputProps = item.props;
         this.inputProps = item.props;
         return item;
@@ -278,8 +278,8 @@ const childrenType = function(props, propName, component) {
       `${component} should have both Label and Input components`
     );
   } else if (
-    props.children[0].type.displayName !== "Styled(Label)" ||
-    props.children[1].type.displayName !== "Styled(Input)"
+    props.children[0].type !== Label ||
+    props.children[1].type !== Input
   ) {
     error = new Error(
       `${component} should have Label and Input components only`
